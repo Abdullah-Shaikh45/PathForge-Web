@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  line-height: 1.6;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #4531cc, #0a0017);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+  font-size: 48px;
+  margin: 0;
+  animation: slideDown 1.5s ease-out;
+}
+
+.tagline {
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 10px;
+  animation: fadeIn 3s ease;
+}
+
+/* Card Grids */
+.features-grid,
+.usecase-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 30px;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  background: #2c2c2c;
+}
+
+/* Carousel */
+.carousel-container {
+  position: relative;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  display: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: opacity 1s ease, transform 0.5s ease;
+}
+
+.carousel-img.active {
+  display: block;
+  animation: zoomIn 1s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #4531cc, #6f00ff);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #3a393d;
+}
+
+.carousel-btn.prev {
+  left: 5px;
+}
+
+.carousel-btn.next {
+  right: 5px;
+}
+
+/* Screenshot Section */
+.screenshot-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(135deg, #1f0036, #12002c);
+  padding: 40px 20px;
+  border-radius: 20px;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.screenshot-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Download Button */
+.download-btn {
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #4531cc, #6f00ff);
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(111, 0, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background-color: #101010;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 36px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .download-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .carousel-btn {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .card {
+    font-size: 15px;
+    padding: 20px;
+  }
+
+  .screenshot-grid img {
+    max-height: 250px;
+  }
+}
+
+/* Logo Section */
+.logo-section {
+    background: #1b1b1b;
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    animation: slideUp 1.5s ease-in-out;
+  }
+  
+  .logo-img {
+    width: 120px;
+    height: auto;
+    border-radius: 20%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(111, 0, 255, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+  }
+  
+  .logo-caption {
+    color: #aaa;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  /* Animation for logo section */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 600px) {
+  .logo {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .download-btn {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .logo-img {
+    width: 90px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+}
+
+  
