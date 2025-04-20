@@ -8,13 +8,22 @@ function showImage(index) {
     img.classList.toggle('active', i === index);
   });
 }
-
 prevBtn.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
   showImage(currentIndex);
 });
-
 nextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % imgs.length;
   showImage(currentIndex);
+});
+
+
+
+document.getElementById('download-apk').addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.href = 'pathforge.apk';
+  link.download = 'pathforge.apk';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
